@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Options</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 360px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    width: 140px;
+    padding: 12px;
+    margin: 8px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
+    transition: 0.3s;
+}
+
+.bank { background: #27ae60; }
+.esewa { background: #27ae60; }
+.namaste { background: #9b59b6; }
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.details {
+    margin-top: 20px;
+    display: none;
+}
+
+img {
+    width: 200px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Payment Options</h1>
+
+    <div class="buttons">
+        <button class="bank" onclick="showMethod('bank')">Bank</button>
+        <button class="esewa" onclick="showMethod('esewa')">eSewa</button>
+        <button class="namaste" onclick="showMethod('namaste')">Namaste Pay</button>
+    </div>
+
+    <div id="bank" class="details">
+        <h3>Bank Payment</h3>
+        <p>Account Number: 9761331826</p>
+        <p>Bank Name: Laxmi sunrise bank</p>
+        <img src="LBank.png" alt="Bank QR">
+    </div>
+
+    <div id="esewa" class="details">
+        <h3>eSewa Payment</h3>
+        <p>Number: 9764643598</p>
+        <img src="Esewa.png" alt="eSewa QR">
+    </div>
+
+    <div id="namaste" class="details">
+        <h3>Namaste Pay</h3>
+        <p>Note: It may not work to some app</p>
+        <p>Number: 9764643598</p>
+        <img src="Npay.png" alt="Namaste QR">
+    </div>
+</div>
+
+<script>
+function showMethod(method) {
+    let methods = ["bank", "esewa", "namaste"];
+    methods.forEach(id => {
+        document.getElementById(id).style.display = "none";
+    });
+    document.getElementById(method).style.display = "block";
+}
+</script>
+
+</body>
+</html>
